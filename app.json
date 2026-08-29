@@ -1,0 +1,1433 @@
+{
+  "id": "ai-h2a-farm-labor-compliance",
+  "title": "FarmLabor H-2A",
+  "tagline": "Job orders, recruitment, wages, housing, transport, payroll, and audit evidence",
+  "industry": "Agricultural Labor Compliance",
+  "port": 4553,
+  "accent": "#be123c",
+  "valueLabel": "Workers governed",
+  "value": "4,800",
+  "workflows": [
+    {
+      "id": "job-order",
+      "title": "Job Order and Certification",
+      "description": "Evaluate job order and certification with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Job Order and Certification Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Positions Requested",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "Job Order and Certification Reference STD-2026-104",
+            "entity": "Agricultural Employer STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "Job Order and Certification Reference RISK-2026-227",
+            "entity": "Agricultural Employer RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "Job Order and Certification Reference EXC-2026-319",
+            "entity": "Agricultural Employer EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "recruitment",
+      "title": "U.S. Worker Recruitment",
+      "description": "Evaluate u.s. worker recruitment with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "U.S. Worker Recruitment Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Applicants Reviewed",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "U.S. Worker Recruitment Reference STD-2026-104",
+            "entity": "Agricultural Employer STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "U.S. Worker Recruitment Reference RISK-2026-227",
+            "entity": "Agricultural Employer RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "U.S. Worker Recruitment Reference EXC-2026-319",
+            "entity": "Agricultural Employer EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "contract",
+      "title": "Worker Contract Disclosure",
+      "description": "Evaluate worker contract disclosure with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Worker Contract Disclosure Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Contracts Delivered",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "H1234",
+            "entity": "Agricultural Employer STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "H5678",
+            "entity": "Agricultural Employer RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "H9012",
+            "entity": "Agricultural Employer EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "wage",
+      "title": "Required Wage Compliance",
+      "description": "Evaluate required wage compliance with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Required Wage Compliance Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Payroll Value",
+          "type": "currency",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "Required Wage Compliance Reference STD-2026-104",
+            "entity": "Agricultural Employer STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 285000,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "Required Wage Compliance Reference RISK-2026-227",
+            "entity": "Agricultural Employer RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 875000,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "Required Wage Compliance Reference EXC-2026-319",
+            "entity": "Agricultural Employer EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 142500,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "hours",
+      "title": "Three-Quarter Guarantee",
+      "description": "Evaluate three-quarter guarantee with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Three-Quarter Guarantee Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Guaranteed Hours",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "Three-Quarter Guarantee Reference STD-2026-104",
+            "entity": "Agricultural Employer STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "Three-Quarter Guarantee Reference RISK-2026-227",
+            "entity": "Agricultural Employer RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "Three-Quarter Guarantee Reference EXC-2026-319",
+            "entity": "Agricultural Employer EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "housing",
+      "title": "Worker Housing Compliance",
+      "description": "Evaluate worker housing compliance with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Worker Housing Compliance Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Beds Inspected",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "Worker Housing Compliance Reference STD-2026-104",
+            "entity": "Agricultural Employer STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "Worker Housing Compliance Reference RISK-2026-227",
+            "entity": "Agricultural Employer RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "Worker Housing Compliance Reference EXC-2026-319",
+            "entity": "Agricultural Employer EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "title": "Transportation and Subsistence",
+      "description": "Evaluate transportation and subsistence with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "Transportation and Subsistence Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Trips Supported",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "Transportation and Subsistence Reference STD-2026-104",
+            "entity": "Agricultural Employer STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "Transportation and Subsistence Reference RISK-2026-227",
+            "entity": "Agricultural Employer RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "Transportation and Subsistence Reference EXC-2026-319",
+            "entity": "Agricultural Employer EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    },
+    {
+      "id": "audit",
+      "title": "H-2A Recordkeeping and Audit",
+      "description": "Evaluate h-2a recordkeeping and audit with source evidence, accountable ownership, financial or operational impact, and documented approval.",
+      "fields": [
+        {
+          "key": "caseReference",
+          "label": "H-2A Recordkeeping and Audit Reference",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "metric",
+          "label": "Records Complete",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "states": [
+        "intake",
+        "analyzing",
+        "review",
+        "approved",
+        "closed"
+      ],
+      "examples": [
+        {
+          "id": "standard",
+          "label": "Fill Standard Case",
+          "values": {
+            "caseReference": "H-2A Recordkeeping and Audit Reference STD-2026-104",
+            "entity": "Agricultural Employer STD-2026-104",
+            "reviewDate": "2026-09-08",
+            "metric": 125,
+            "evidenceNotes": "Complete: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "high-risk",
+          "label": "Fill High-Risk Case",
+          "values": {
+            "caseReference": "H-2A Recordkeeping and Audit Reference RISK-2026-227",
+            "entity": "Agricultural Employer RISK-2026-227",
+            "reviewDate": "2026-08-19",
+            "metric": 975,
+            "evidenceNotes": "Critical exception: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        },
+        {
+          "id": "exception",
+          "label": "Fill Exception Case",
+          "values": {
+            "caseReference": "H-2A Recordkeeping and Audit Reference EXC-2026-319",
+            "entity": "Agricultural Employer EXC-2026-319",
+            "reviewDate": "2026-08-10",
+            "metric": 41,
+            "evidenceNotes": "Reviewer follow-up: source evidence, financial impact, control context, and documented reviewer rationale are available for analysis."
+          }
+        }
+      ],
+      "aiActions": [
+        {
+          "id": "assess",
+          "label": "Assess Risk & Value"
+        },
+        {
+          "id": "evidence",
+          "label": "Build Evidence Checklist"
+        },
+        {
+          "id": "plan",
+          "label": "Recommend Action Plan"
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "id": "job-order",
+      "title": "Job Order and Certification Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for job order and certification.",
+      "table": "op_job_order",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Job Order and Certification Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Positions Requested",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "recruitment",
+      "title": "U.S. Worker Recruitment Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for u.s. worker recruitment.",
+      "table": "op_recruitment",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "U.S. Worker Recruitment Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Applicants Reviewed",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "contract",
+      "title": "Worker Contract Disclosure Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for worker contract disclosure.",
+      "table": "op_contract",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Worker Contract Disclosure Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Contracts Delivered",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "wage",
+      "title": "Required Wage Compliance Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for required wage compliance.",
+      "table": "op_wage",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Required Wage Compliance Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Payroll Value",
+          "type": "currency",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "hours",
+      "title": "Three-Quarter Guarantee Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for three-quarter guarantee.",
+      "table": "op_hours",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Three-Quarter Guarantee Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Guaranteed Hours",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "housing",
+      "title": "Worker Housing Compliance Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for worker housing compliance.",
+      "table": "op_housing",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Worker Housing Compliance Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Beds Inspected",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "title": "Transportation and Subsistence Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for transportation and subsistence.",
+      "table": "op_transport",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "Transportation and Subsistence Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Trips Supported",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "audit",
+      "title": "H-2A Recordkeeping and Audit Register",
+      "description": "Operational records, ownership, status, financial value, and evidence for h-2a recordkeeping and audit.",
+      "table": "op_audit",
+      "columns": [
+        {
+          "key": "caseReference",
+          "label": "H-2A Recordkeeping and Audit Reference",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_caseReference"
+        },
+        {
+          "key": "entity",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_entity"
+        },
+        {
+          "key": "reviewDate",
+          "label": "Review Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_reviewDate"
+        },
+        {
+          "key": "metric",
+          "label": "Records Complete",
+          "type": "number",
+          "required": true,
+          "dbKey": "data_metric"
+        },
+        {
+          "key": "evidenceNotes",
+          "label": "Evidence and Reviewer Notes",
+          "type": "textarea",
+          "required": false,
+          "dbKey": "data_evidenceNotes"
+        }
+      ]
+    },
+    {
+      "id": "employer-master",
+      "title": "Employer and Worksite Registry",
+      "description": "Controlled employer and worksite registry records supporting operational decisions and audit evidence.",
+      "table": "op_employer_master",
+      "columns": [
+        {
+          "key": "recordId",
+          "label": "Employer and Worksite Registry ID",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_recordId"
+        },
+        {
+          "key": "name",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_name"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Active",
+            "Pending",
+            "Suspended",
+            "Retired"
+          ],
+          "dbKey": "data_status"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_effectiveDate"
+        }
+      ]
+    },
+    {
+      "id": "worker-master",
+      "title": "Worker and Application Directory",
+      "description": "Controlled worker and application directory records supporting operational decisions and audit evidence.",
+      "table": "op_worker_master",
+      "columns": [
+        {
+          "key": "recordId",
+          "label": "Worker and Application Directory ID",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_recordId"
+        },
+        {
+          "key": "name",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_name"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Active",
+            "Pending",
+            "Suspended",
+            "Retired"
+          ],
+          "dbKey": "data_status"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_effectiveDate"
+        }
+      ]
+    },
+    {
+      "id": "wage-master",
+      "title": "Wage and Deduction Rule Library",
+      "description": "Controlled wage and deduction rule library records supporting operational decisions and audit evidence.",
+      "table": "op_wage_master",
+      "columns": [
+        {
+          "key": "recordId",
+          "label": "Wage and Deduction Rule Library ID",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_recordId"
+        },
+        {
+          "key": "name",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_name"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Active",
+            "Pending",
+            "Suspended",
+            "Retired"
+          ],
+          "dbKey": "data_status"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_effectiveDate"
+        }
+      ]
+    },
+    {
+      "id": "housing-master",
+      "title": "Housing and Transportation Registry",
+      "description": "Controlled housing and transportation registry records supporting operational decisions and audit evidence.",
+      "table": "op_housing_master",
+      "columns": [
+        {
+          "key": "recordId",
+          "label": "Housing and Transportation Registry ID",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_recordId"
+        },
+        {
+          "key": "name",
+          "label": "Agricultural Employer",
+          "type": "text",
+          "required": true,
+          "dbKey": "data_name"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Active",
+            "Pending",
+            "Suspended",
+            "Retired"
+          ],
+          "dbKey": "data_status"
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "type": "date",
+          "required": true,
+          "dbKey": "data_effectiveDate"
+        }
+      ]
+    }
+  ],
+  "domainProduct": {
+    "home": "FarmLabor H-2A Command Center",
+    "context": "Job orders, recruitment, wages, housing, transport, payroll, and audit evidence",
+    "features": [
+      {
+        "id": "job-order-command",
+        "title": "Job Order and Certification",
+        "description": "Coordinate job order and certification across controlled source data, accountable review, measurable exposure, and retained evidence.",
+        "view": "evidence",
+        "modules": [
+          "job-order",
+          "employer-master"
+        ],
+        "actions": [
+          {
+            "id": "approve-job-order",
+            "label": "Approve Job Order and Certification",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved job order and certification with source evidence and reviewer attribution."
+          },
+          {
+            "id": "escalate-job-order",
+            "label": "Escalate Job Order and Certification",
+            "nextStatus": "Investigating",
+            "auditDetail": "Escalated job order and certification for exception remediation and additional evidence."
+          }
+        ]
+      },
+      {
+        "id": "recruitment-command",
+        "title": "U.S. Worker Recruitment",
+        "description": "Coordinate u.s. worker recruitment across controlled source data, accountable review, measurable exposure, and retained evidence.",
+        "view": "reconciliation",
+        "modules": [
+          "recruitment",
+          "worker-master"
+        ],
+        "actions": [
+          {
+            "id": "approve-recruitment",
+            "label": "Approve U.S. Worker Recruitment",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved u.s. worker recruitment with source evidence and reviewer attribution."
+          },
+          {
+            "id": "escalate-recruitment",
+            "label": "Escalate U.S. Worker Recruitment",
+            "nextStatus": "Investigating",
+            "auditDetail": "Escalated u.s. worker recruitment for exception remediation and additional evidence."
+          }
+        ]
+      },
+      {
+        "id": "contract-command",
+        "title": "Worker Contract Disclosure",
+        "description": "Coordinate worker contract disclosure across controlled source data, accountable review, measurable exposure, and retained evidence.",
+        "view": "control",
+        "modules": [
+          "contract",
+          "wage-master"
+        ],
+        "actions": [
+          {
+            "id": "approve-contract",
+            "label": "Approve Worker Contract Disclosure",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved worker contract disclosure with source evidence and reviewer attribution."
+          },
+          {
+            "id": "escalate-contract",
+            "label": "Escalate Worker Contract Disclosure",
+            "nextStatus": "Investigating",
+            "auditDetail": "Escalated worker contract disclosure for exception remediation and additional evidence."
+          }
+        ]
+      },
+      {
+        "id": "wage-command",
+        "title": "Required Wage Compliance",
+        "description": "Coordinate required wage compliance across controlled source data, accountable review, measurable exposure, and retained evidence.",
+        "view": "deadline",
+        "modules": [
+          "wage",
+          "housing-master"
+        ],
+        "actions": [
+          {
+            "id": "approve-wage",
+            "label": "Approve Required Wage Compliance",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved required wage compliance with source evidence and reviewer attribution."
+          },
+          {
+            "id": "escalate-wage",
+            "label": "Escalate Required Wage Compliance",
+            "nextStatus": "Investigating",
+            "auditDetail": "Escalated required wage compliance for exception remediation and additional evidence."
+          }
+        ]
+      },
+      {
+        "id": "hours-command",
+        "title": "Three-Quarter Guarantee",
+        "description": "Coordinate three-quarter guarantee across controlled source data, accountable review, measurable exposure, and retained evidence.",
+        "view": "board",
+        "modules": [
+          "hours",
+          "housing"
+        ],
+        "actions": [
+          {
+            "id": "approve-hours",
+            "label": "Approve Three-Quarter Guarantee",
+            "nextStatus": "Approved",
+            "auditDetail": "Approved three-quarter guarantee with source evidence and reviewer attribution."
+          },
+          {
+            "id": "escalate-hours",
+            "label": "Escalate Three-Quarter Guarantee",
+            "nextStatus": "Investigating",
+            "auditDetail": "Escalated three-quarter guarantee for exception remediation and additional evidence."
+          }
+        ]
+      }
+    ]
+  },
+  "integrations": [
+    {
+      "id": "integration-1",
+      "name": "DOL FLAG filing",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-2",
+      "name": "Applicant tracking",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-3",
+      "name": "Payroll system",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-4",
+      "name": "Housing inspection",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    },
+    {
+      "id": "integration-5",
+      "name": "Transportation scheduling",
+      "category": "Domain data source",
+      "mode": "Read-only demo connector"
+    }
+  ],
+  "featureCount": 40,
+  "seededRecords": 300,
+  "demoUsers": 3,
+  "apiPort": 5553,
+  "dbName": "profit_ai_h2a_farm_labor_compliance"
+}
